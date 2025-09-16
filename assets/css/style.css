@@ -1,0 +1,95 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Quicksand", sans-serif;
+}
+
+.logo-heading {
+    height: 4rem;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background-image: linear-gradient(135deg, #CE9FFC 10%, #7367F0 100%);
+    color: #ffffff;
+    font-size: 2rem;
+}
+
+.cards-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    margin: 2rem;
+}
+
+.card {
+    height: 24rem;
+    width: 20rem;
+    border: 2px solid #f62d48;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+    overflow: hidden;
+    border-radius: 2rem;
+}
+
+.card .img {
+    position: relative;
+    height: 10rem;
+    width: 100%;
+    background: url(../images/tic-tac-toe.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    transition: all .3s ease-in-out;
+}
+
+/* Glass overlay effect */
+.card .img::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    /* cover entire image */
+    background: rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    /* hidden by default */
+    transition: opacity 0.3s ease-in-out;
+}
+
+/* Show glass effect on hover */
+.card .img:hover::before {
+    opacity: 1;
+}
+
+
+
+.card .img:hover {
+    scale: 1.1;
+}
+
+.card-content {
+    margin: 1rem;
+    text-align: justify;
+}
+
+.card-content h3 {
+    font-size: 1.5rem;
+    text-transform: uppercase;
+}
+
+.card-content p {
+    margin: .5rem 0;
+}
+
+.card-content button {
+    margin: .5rem 0;
+    padding: .5rem 2rem;
+    font-size: 1rem;
+    border: none;
+    background: #f62d48;
+    color: #ffffff;
+    cursor: pointer;
+    border-radius: 1rem;
+}
