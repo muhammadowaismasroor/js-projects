@@ -7,6 +7,7 @@
     font-family: "Quicksand", sans-serif;
 }
 
+/* header area */
 .logo-heading {
     height: 4rem;
     width: 100%;
@@ -19,6 +20,7 @@
     font-size: 2rem;
 }
 
+/* cards area */
 .cards-container {
     display: flex;
     align-items: center;
@@ -83,13 +85,16 @@
     margin: .5rem 0;
 }
 
-.card-content button {
-    margin: .5rem 0;
+.card-content .btn  {
+    margin-top: 1rem;
+}
+
+.card-content .btn a {
     padding: .5rem 2rem;
     font-size: 1rem;
+    text-decoration: none;
     border: none;
     background: #f62d48;
     color: #ffffff;
-    cursor: pointer;
     border-radius: 1rem;
 }

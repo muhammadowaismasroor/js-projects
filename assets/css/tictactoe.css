@@ -1,0 +1,75 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Quicksand", sans-serif;
+}
+
+.logo-heading {
+    height: 4rem;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background-image: linear-gradient(135deg, #CE9FFC 10%, #7367F0 100%);
+    color: #ffffff;
+    font-size: 2rem;
+}
+
+body {
+    background: #FDEBD0;
+}
+
+
+h1 {
+    text-align: center;
+    margin-top: 2rem;
+    font-size: 3rem;
+    text-transform: uppercase;
+    color: #DC143C;
+    font-weight: 400;
+}
+
+.main-container {
+    margin-top: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.container {
+    display: grid;
+    grid-template-columns: 6rem 6rem 6rem;
+    grid-template-rows: 6rem 6rem 6rem;
+    gap: 1rem;
+}
+
+.box {
+    font-size: 2rem;
+    color: #DC143C;
+    box-shadow: 5px 5px 5px rgba(57, 56, 56, 0.2);
+}
+
+button {
+    border: 1px solid #F75270;
+    cursor: pointer;
+    border-radius: 1rem;
+    transition: all .2s ease-in-out;
+}
+
+button:hover {
+    background: #F7CAC9;
+}
+
+.reset-btn{
+    text-align: center;
+    margin-top: 1rem;
+}
+.reset-btn button{
+    padding: .5rem 1rem;
+    font-size:1rem;
+}
