@@ -1,6 +1,9 @@
 let boxes = document.querySelectorAll(".box");
 let resetBtn = document.querySelector("#reset");
 let turn = true;
+let hide = document.querySelector(".hide");
+let winnerMsg = document.querySelector(".msg-container p")
+let newBtn = document.querySelector("#new-btn");
 
 let winPatt = [
     [0, 1, 2],
@@ -28,6 +31,23 @@ boxes.forEach((box) => {
     })
 })
 
-const checkWinner = () =>{
-    
+const checkWinner = () => {
+    for (patt of winPatt) {
+        let pos1Val = boxes[patt[0]].innerHTML;
+        let pos2Val = boxes[patt[1]].innerHTML;
+        let pos3Val = boxes[patt[2]].innerHTML;
+        // console.log(patt[0])
+        // console.log(boxes[patt[0]])
+        
+        if (pos1Val != "" && pos2Val != "" && pos3Val != "") {
+            if (pos1Val === pos2Val && pos2Val === pos3Val) {
+                showWinner(pos1Val);
+            }
+        }
+    }
+}
+
+const showWinner = (winner) => {
+    winnerMsg.innerText = `Congradulation ${winner} win the game`;
+    winnerMsg.classList.remove("hide");
 }
