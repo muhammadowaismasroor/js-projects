@@ -16,6 +16,7 @@ let winPatt = [
     [2, 4, 6]
 ]
 
+// for making whose turn and when click on button what written
 boxes.forEach((box) => {
     box.addEventListener("click", () => {
         if (turn === true) {
@@ -31,6 +32,7 @@ boxes.forEach((box) => {
     })
 })
 
+// checking the winner 
 const checkWinner = () => {
     for (patt of winPatt) {
         let pos1Val = boxes[patt[0]].innerHTML;
@@ -38,7 +40,7 @@ const checkWinner = () => {
         let pos3Val = boxes[patt[2]].innerHTML;
         // console.log(patt[0])
         // console.log(boxes[patt[0]])
-        
+
         if (pos1Val != "" && pos2Val != "" && pos3Val != "") {
             if (pos1Val === pos2Val && pos2Val === pos3Val) {
                 showWinner(pos1Val);
@@ -47,7 +49,36 @@ const checkWinner = () => {
     }
 }
 
+// winner message show when player win 
 const showWinner = (winner) => {
-    winnerMsg.innerText = `Congradulation ${winner} win the game`;
+    winnerMsg.innerText = `Congradulation ${winner} you win the game`;
     winnerMsg.classList.remove("hide");
+    disableBoxes();
 }
+
+
+
+// for disable boxes after win the match
+const disableBoxes = () => {
+    for (box of boxes) {
+        box.disabled = true;
+    }
+}
+
+// for rest button
+const resetGame = () => {
+    turn = true;
+    enableBoxes();
+    winnerMsg.classList.add("hide");
+}
+
+// for enables the boxes
+const enableBoxes = () => {
+    for (box of boxes) {
+        box.disabled = false;
+        box.innerText = "";
+    }
+}
+
+resetBtn.addEventListener("click", resetGame);
+newBtn.addEventListener("click", resetGame);
