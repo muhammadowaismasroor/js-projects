@@ -29,6 +29,7 @@ boxes.forEach((box) => {
         }
         box.disabled = true;
         checkWinner();
+        draw();
     })
 })
 
@@ -82,3 +83,14 @@ const enableBoxes = () => {
 
 resetBtn.addEventListener("click", resetGame);
 newBtn.addEventListener("click", resetGame);
+
+// for game draw
+let count = 0;
+const draw = () => {
+    count++;
+    if(count == 9){
+        winnerMsg.classList.remove(".hide");
+        winnerMsg.innerText = `Game has draw try again`;
+    }
+}
+
