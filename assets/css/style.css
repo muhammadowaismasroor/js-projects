@@ -37,40 +37,40 @@
     border-radius: 2rem;
 }
 
-.card .img {
-    position: relative;
-    height: 10rem;
-    width: 100%;
-    background: url(../images/tic-tac-toe.jpg);
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    transition: all .3s ease-in-out;
+.image-container {
+  position: relative;
+  height: 10rem;
+  width: 100%;
+  overflow: hidden;
 }
 
-/* Glass overlay effect */
-.card .img::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    /* cover entire image */
-    background: rgba(0, 0, 0, 0.5);
-    opacity: 0;
-    /* hidden by default */
-    transition: opacity 0.3s ease-in-out;
+.image-container img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  transition: all 0.3s ease-in-out;
 }
 
-/* Show glass effect on hover */
-.card .img:hover::before {
-    opacity: 1;
+/* for glass over in image */
+.image-container::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  z-index: 2;
+  transition: opacity 0.3s ease-in-out;
 }
 
-
-
-.card .img:hover {
-    scale: 1.1;
+.image-container:hover::before {
+  opacity: 1;
 }
 
+.image-container:hover img {
+  transform: scale(1.1);
+}
+
+/* cards content area */
 .card-content {
     margin: 1rem;
     text-align: justify;
